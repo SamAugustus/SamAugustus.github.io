@@ -1,0 +1,3287 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+#anima-interface {
+    transition: all 0.5s ease-in-out;
+}
+
+#anima-watermark {
+    transition: all 0.5s ease-in-out;
+    display: none;
+}
+
+#anima-watermark-link {
+    position: fixed;
+    bottom: 20px;
+    height: 30px;
+    border-radius: 1000px;
+    background: #3B3B3B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px 8px 11px;
+    font-family: Mulish, sans-serif;
+    font-size: 12px;
+}
+
+#anima-watermark-link .text {
+    margin-left: 6px;
+}
+
+.omniview-anima-action-links .link {
+    height: 30px;
+    width: 30px;
+    border-radius: 1000px;
+    background: #3B3B3B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: width 0.25s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    text-decoration: none;
+    color: #fff;
+}
+
+.omniview-anima-action-links #comment-link .text,
+.omniview-anima-action-links #code-link .text {
+    display: none;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.omniview-anima-action-links #comment-link:hover,
+.omniview-anima-action-links #code-link:hover {
+    width: 105px;
+}
+
+.omniview-anima-action-links #comment-link.pop-active,
+.omniview-anima-action-links #code-link.pop-active {
+    width: 105px;
+    background: #FF6250;
+}
+
+.omniview-anima-action-links #comment-link.pop-active .text,
+.omniview-anima-action-links #code-link.pop-active .text {
+    display: block
+}
+
+.omniview-anima-action-links #comment-link:hover .text,
+.omniview-anima-action-links #code-link:hover .text {
+    display: block;
+}
+
+.link.navigation {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 32px;
+    color: #fff;
+    font-size: 12px;
+    cursor: default;
+    padding: 0 5px;
+}
+
+.link.navigation .icon {
+    margin: 0 6px;
+    fill: none;
+    stroke: currentColor;
+    cursor: pointer;
+}
+
+.link.navigation .icon.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.link.navigation .home-icon {
+    margin-left: 6px;
+    fill: currentColor;
+    stroke: currentColor;
+    cursor: pointer;
+}
+
+.omniview-anima-action-links .restart {
+    height: 30px;
+    padding: 0 12px;
+    background: #3B3B3B;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #f1f1f1;
+    font-size: 12px;
+}
+
+.omniview-anima-action-links {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: Mulish, sans-serif;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.omniview-anima-action-links>*+* {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.idle {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#popoverOpener {
+    position: absolute;
+    left: 50%;
+    margin-left: -10vw;
+    text-align: center;
+    top: 45vh;
+    width: 20vw;
+}
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    font-family: "sans-serif";
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.popover.top {
+    margin-top: -12px
+}
+
+.popover.right {
+    margin-left: 10px
+}
+
+.popover.bottom {
+    margin-top: 10px
+}
+
+.popover.left {
+    margin-left: -10px
+}
+
+.popover-title {
+    padding: 8px 14px;
+    margin: 0;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 5px 5px 0 0
+}
+
+.popover-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    font-family: Mulish, sans-serif;
+}
+
+.popover>.arrow,
+.popover>.arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid
+}
+
+.popover>.arrow {
+    border-width: 11px
+}
+
+.popover>.arrow:after {
+    content: "";
+    border-width: 10px
+}
+
+.popover.top>.arrow {
+    bottom: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-color: #999;
+    border-top-color: rgba(0, 0, 0, .25);
+    border-bottom-width: 0
+}
+
+.popover.top>.arrow:after {
+    bottom: 1px;
+    margin-left: -10px;
+    content: " ";
+    border-top-color: #fff;
+    border-bottom-width: 0
+}
+
+.popover.right>.arrow {
+    top: 50%;
+    left: -11px;
+    margin-top: -11px;
+    border-right-color: #999;
+    border-right-color: rgba(0, 0, 0, .25);
+    border-left-width: 0
+}
+
+.popover.right>.arrow:after {
+    bottom: -10px;
+    left: 1px;
+    content: " ";
+    border-right-color: #fff;
+    border-left-width: 0
+}
+
+.popover.bottom>.arrow {
+    top: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: #999;
+    border-bottom-color: rgba(0, 0, 0, .25)
+}
+
+.popover.bottom>.arrow:after {
+    top: 1px;
+    margin-left: -10px;
+    content: " ";
+    border-top-width: 0;
+    border-bottom-color: #fff
+}
+
+.popover.left>.arrow {
+    top: 50%;
+    right: -11px;
+    margin-top: -11px;
+    border-right-width: 0;
+    border-left-color: #999;
+    border-left-color: rgba(0, 0, 0, .25)
+}
+
+.popover.left>.arrow:after {
+    right: 1px;
+    bottom: -10px;
+    content: " ";
+    border-right-width: 0;
+    border-left-color: #fff
+}
+
+#anima-comment-popover,
+#anima-code-popover {
+    background: #333333;
+    color: #fff;
+}
+
+#anima-comment-popover.top>.arrow,
+#anima-comment-popover.top>.arrow:after,
+#anima-code-popover.top>.arrow:after,
+#anima-code-popover.top>.arrow {
+    border-top-color: #333;
+}
+
+#anima-comment-popover .btn,
+#anima-code-popover .btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 20px;
+    background: #FF6250;
+    color: #fff;
+    border-radius: 100px;
+    width: max-content;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 550px) {
+    #anima-watermark-link {
+        padding: 6px !important;
+    }
+
+    #anima-watermark-link .text {
+        display: none !important;
+    }
+}
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Hind+Guntur:400,700,500");
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+@import url("https://px.animaapp.com/625a801bec989c0bdeba8aaf.625a801e555137a81fc81f7c.jTNqx3l.hch.png");
+
+.screen textarea:focus,
+.screen input:focus {
+    outline: none;
+}
+
+.screen * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+.screen div {
+    -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+    display: contents;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+.component-wrapper * {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+    pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+    visibility: hidden !important;
+}
+
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+
+.full-width-a {
+    width: 100%;
+}
+
+.full-height-a {
+    height: 100%;
+}
+
+.container-center-vertical {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    pointer-events: none;
+}
+
+.container-center-vertical>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+
+.container-center-horizontal>* {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+
+.auto-animated div {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+
+.auto-animated input {
+    --z-index: -1;
+    opacity: 0;
+    position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+    opacity: 1;
+}
+
+.overlay {
+    display: none;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.overlay.animate-appear {
+    animation: reveal 0.3s ease-in-out 1 normal forwards;
+    display: block;
+    opacity: 0;
+}
+
+.overlay.animate-disappear {
+    animation: reveal 0.3s ease-in-out 1 reverse forwards;
+    display: block;
+    opacity: 1;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-nodelay {
+    animation-delay: 0s;
+}
+
+.align-self-flex-start {
+    align-self: flex-start;
+}
+
+.align-self-flex-end {
+    align-self: flex-end;
+}
+
+.align-self-flex-center {
+    align-self: flex-center;
+}
+
+.valign-text-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.valign-text-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+input:focus {
+    outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+    pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+    cursor: pointer;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --elephant: #0e2d46;
+    --fiord: #3e596e;
+    --gallery: #f0f0f0;
+    --green-blue: #0366b4;
+    --polar: #e5eff7;
+    --white: #ffffff;
+    --font-size-l: 20px;
+    --font-size-m: 18px;
+    --font-size-s: 16px;
+    --font-size-xl: 22px;
+    --font-size-xs: 14px;
+    --font-size-xxl: 38px;
+    --font-size-xxxl: 60px;
+    --font-family-hind_guntur: "Hind Guntur", Helvetica;
+}
+
+.hindguntur-normal-white-14px {
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hindguntur-normal-fiord-18px {
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hindguntur-normal-fiord-16px {
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hindguntur-normal-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.hindguntur-bold-elephant-38px {
+    color: var(--elephant);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-xxl);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.hindguntur-bold-fiord-20px {
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.hindguntur-bold-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.hindguntur-bold-elephant-22px {
+    color: var(--elephant);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-xl);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.hindguntur-medium-elephant-20px {
+    color: var(--elephant);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 500;
+}
+
+.border-1px-fiord {
+    border: 1px solid var(--fiord);
+}
+
+/* screen - cancer */
+.cancer {
+    background-color: var(--white);
+    height: 5782px;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: relative;
+    width: 1366px;
+}
+
+.cancer .group-306-YRVxtg {
+    background-color: transparent;
+    height: 700px;
+    left: 0px;
+    position: absolute;
+    top: 1568px;
+    width: 1366px;
+}
+
+.cancer .group-78-KRA6vQ {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-77-XqhliI {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-80-KRA6vQ {
+    background-color: transparent;
+    bottom: 1px;
+    height: 537px;
+    left: 0px;
+    position: absolute;
+    width: 607px;
+}
+
+.cancer .group-79-a8l1ft {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-82-KRA6vQ {
+    background-color: transparent;
+    bottom: 1px;
+    height: 343px;
+    left: 0px;
+    position: absolute;
+    width: 555px;
+}
+
+.cancer .group-81-zDnzA2 {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-84-KRA6vQ {
+    background-color: transparent;
+    height: 430px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 605px;
+}
+
+.cancer .group-83-5EoIMh {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-86-KRA6vQ {
+    background-color: transparent;
+    height: 206px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 531px;
+}
+
+.cancer .group-85-t3D9lQ {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .mask-group-2-YRVxtg {
+    background-color: transparent;
+    height: 768px;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 1366px;
+}
+
+.cancer .cancer-YRVxtg {
+    background-color: transparent;
+    height: 700px;
+    left: 683px;
+    object-fit: cover;
+    position: absolute;
+    top: 1568px;
+    width: 683px;
+}
+
+.cancer .rectangle-7-YRVxtg {
+    background: linear-gradient(216.02deg, #008e55 13.18%, #0366b4 89.66%);
+    background-color: transparent;
+    height: 700px;
+    left: 0px;
+    position: absolute;
+    top: 768px;
+    width: 568px;
+}
+
+.cancer .rectangle-50-YRVxtg {
+    background: linear-gradient(216.02deg, #008e55 13.18%, #0366b4 89.66%);
+    background-color: transparent;
+    height: 700px;
+    left: 798px;
+    position: absolute;
+    top: 4208px;
+    width: 568px;
+}
+
+.cancer .rectangle-51-YRVxtg {
+    background: linear-gradient(249.08deg, #008e55 -38.2%, #0366b4 129.71%);
+    background-color: transparent;
+    height: 453px;
+    left: 0px;
+    position: absolute;
+    top: 5332px;
+    width: 1366px;
+}
+
+.cancer .rectangle-37-YRVxtg {
+    background: linear-gradient(216.02deg, #008e55 13.18%, #0366b4 89.66%);
+    background-color: transparent;
+    height: 700px;
+    left: 0px;
+    position: absolute;
+    top: 3408px;
+    width: 568px;
+}
+
+.cancer .ysr-YRVxtg {
+    background-color: transparent;
+    height: 520px;
+    left: 198px;
+    object-fit: cover;
+    position: absolute;
+    top: 858px;
+    width: 470px;
+}
+
+.cancer .sts-YRVxtg {
+    background-color: var(--elephant);
+    height: 520px;
+    left: 728px;
+    position: absolute;
+    top: 4298px;
+    width: 470px;
+}
+
+.cancer .create-a-future-with-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 728px;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    position: absolute;
+    text-align: left;
+    top: 878px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .winning-over-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 720px;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    position: absolute;
+    text-align: center;
+    top: 3668px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .latest-news-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 98px;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    position: absolute;
+    text-align: left;
+    top: 4366px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .once-you-choose-hope-anythings-possible-YRVxtg {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-xxxl);
+    font-style: normal;
+    font-weight: 700;
+    height: auto;
+    left: 194px;
+    letter-spacing: 0.00px;
+    line-height: 70px;
+    position: absolute;
+    text-align: center;
+    top: 457px;
+    width: 981px;
+}
+
+.cancer .im-here-for-you-YRVxtg {
+    background-color: transparent;
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 700;
+    height: auto;
+    left: 728px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: 1025px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .lorem-ipsum-is-simpl-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 728px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: 1065px;
+    width: 542px;
+}
+
+.cancer .lorem-ipsum-is-simpl-5B2xJn {
+    background-color: transparent;
+    height: auto;
+    left: 728px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: 3762px;
+    width: 542px;
+}
+
+.cancer .lorem-ipsum-is-simpl-ft2hoz {
+    background-color: transparent;
+    height: auto;
+    left: 98px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: 4507px;
+    width: 572px;
+}
+
+.cancer .lorem-ipsum-is-simpl-1Q3SIZ {
+    background-color: transparent;
+    height: auto;
+    left: 98px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    text-align: left;
+    top: 4462px;
+    width: 542px;
+}
+
+.cancer .ys-jagan-mohan-reddy-YRVxtg {
+    background-color: transparent;
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    height: auto;
+    left: 728px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: 1300px;
+    white-space: nowrap;
+    width: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+    .layoutHeight {
+        height:1300px;
+    }
+    .recHeight{
+        height:50%;  
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .layoutHeight {
+        height:650px;
+    }
+    .recHeight{
+        height:100%;  
+    }
+}
+
+.cancer .span0-nAutl0 {
+    color: var(--elephant);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.cancer .span1-nAutl0 {}
+
+.cancer .logo-YRVxtg {
+    background-color: transparent;
+    height: 68px;
+    left: 728px;
+    object-fit: cover;
+    position: absolute;
+    top: 1221px;
+    width: 76px;
+}
+
+.cancer .group-4-YRVxtg {
+    background-color: transparent;
+    height: 589px;
+    left: 98px;
+    position: absolute;
+    top: 1624px;
+    width: 630px;
+}
+
+.cancer .group-3-IsBneG {
+    background-color: transparent;
+    height: 120px;
+    left: 0px;
+    position: absolute;
+    top: calc(36.03% - 43px);
+    width: 100%;
+}
+
+.cancer .rectangle-4-phxOp6 {
+    background-color: var(--polar);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .know-about-cancer-phxOp6 {
+    background-color: transparent;
+    height: 32px;
+    left: 30px;
+    letter-spacing: 0.00px;
+    line-height: 30px;
+    position: absolute;
+    text-align: left;
+    top: calc(26.14% - 8px);
+    white-space: nowrap;
+    width: 200px;
+}
+
+.cancer .learn-about-the-many-phxOp6 {
+    background-color: transparent;
+    bottom: calc(34.04% - 9px);
+    height: 26px;
+    left: 30px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: calc(100.00% - 71px);
+}
+
+.cancer .path-166-phxOp6 {
+    background-color: transparent;
+    bottom: calc(49.51% - 9px);
+    height: 19px;
+    object-fit: cover;
+    position: absolute;
+    right: 29px;
+    width: 10px;
+}
+
+.cancer .group-2-IsBneG {
+    background-color: transparent;
+    bottom: calc(31.98% - 38px);
+    height: 120px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.cancer .rectangle-5-5qJmwz {
+    background-color: var(--polar);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .newly-diagnosed-5qJmwz {
+    background-color: transparent;
+    height: 32px;
+    left: 30px;
+    letter-spacing: 0.00px;
+    line-height: 30px;
+    position: absolute;
+    text-align: left;
+    top: calc(26.14% - 8px);
+    white-space: nowrap;
+    width: 193px;
+}
+
+.cancer .use-our-guide-to-hel-5qJmwz {
+    background-color: transparent;
+    bottom: calc(34.04% - 9px);
+    height: 26px;
+    left: 30px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: calc(100.00% - 69px);
+}
+
+.cancer .path-167-5qJmwz {
+    background-color: transparent;
+    bottom: calc(49.51% - 9px);
+    height: 19px;
+    object-fit: cover;
+    position: absolute;
+    right: 29px;
+    width: 10px;
+}
+
+.cancer .group-1-IsBneG {
+    background-color: transparent;
+    bottom: 0px;
+    height: 120px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.cancer .rectangle-6-pjKgQP {
+    background-color: var(--polar);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .getting-treatment-pjKgQP {
+    background-color: transparent;
+    height: 32px;
+    left: 30px;
+    letter-spacing: 0.00px;
+    line-height: 30px;
+    position: absolute;
+    text-align: left;
+    top: calc(26.14% - 8px);
+    white-space: nowrap;
+    width: 192px;
+}
+
+.cancer .find-the-information-pjKgQP {
+    background-color: transparent;
+    bottom: calc(34.04% - 9px);
+    height: 26px;
+    left: 30px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: calc(100.00% - 84px);
+}
+
+.cancer .path-168-pjKgQP {
+    background-color: transparent;
+    bottom: calc(49.51% - 9px);
+    height: 19px;
+    object-fit: cover;
+    position: absolute;
+    right: 29px;
+    width: 10px;
+}
+
+.cancer .cancer-is-a-part-of-IsBneG {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-xxl);
+    font-style: normal;
+    font-weight: 700;
+    height: 101px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    position: absolute;
+    text-align: left;
+    top: -5px;
+    width: calc(100.00% - 88px);
+}
+
+.cancer .maintain-a-healthy-l-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 348px;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    position: absolute;
+    text-align: center;
+    top: 2363px;
+    width: 672px;
+}
+
+.cancer .if-youre-experiencin-YRVxtg {
+    background-color: transparent;
+    color: #0c3d64;
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 700;
+    height: auto;
+    left: 366px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    top: 3182px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .a-lump-in-the-breast-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 366px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 2736px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .pain-of-breast-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 871px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 2736px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .bloody-discharge-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 943px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 2904px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .swelling-of-all-or-part-of-breast-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 866px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 3088px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .dimples-or-depressed-skin-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 246px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 2904px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .skin-irritation-or-texture-change-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 269px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 3088px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .group-13-YRVxtg {
+    background-color: transparent;
+    height: 421px;
+    left: 487px;
+    position: absolute;
+    top: 2676px;
+    width: 393px;
+}
+
+.cancer .group-8-cxFNwJ {
+    background-color: transparent;
+    height: calc(100.00% - 11px);
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-10-cxFNwJ {
+    background-color: transparent;
+    height: calc(100.00% - 71px);
+    left: 40px;
+    position: absolute;
+    top: 9px;
+    width: calc(100.00% - 86px);
+}
+
+.cancer .group-9-wTaTLQ {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-12-cxFNwJ {
+    background-color: transparent;
+    height: calc(100.00% - 14px);
+    left: 11px;
+    object-fit: cover;
+    position: absolute;
+    top: 14px;
+    width: calc(100.00% - 61px);
+}
+
+.cancer .oral-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 455px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    top: 2528px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .breast-cancer-YRVxtg {
+    background-color: transparent;
+    color: var(--elephant);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-l);
+    font-style: normal;
+    font-weight: 700;
+    height: auto;
+    left: 619px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    top: 2528px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .cervical-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 802px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    top: 2528px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .rectangle-20-YRVxtg {
+    background-color: var(--green-blue);
+    border-radius: 30px;
+    height: 6px;
+    left: 622px;
+    position: absolute;
+    top: 2564px;
+    width: 123px;
+}
+
+.cancer .group-19-YRVxtg {
+    background-color: transparent;
+    height: 89px;
+    left: 393px;
+    position: absolute;
+    top: 2636px;
+    width: 90px;
+}
+
+.cancer .group-16-QXEnCW {
+    background-color: transparent;
+    height: calc(100.00% - 5px);
+    left: 3px;
+    position: absolute;
+    top: 2px;
+    width: calc(100.00% - 6px);
+}
+
+.cancer .group-15-fpFxm6 {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-18-QXEnCW {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-17-bH6dzs {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-34-YRVxtg {
+    background-color: transparent;
+    height: 89px;
+    left: 294px;
+    position: absolute;
+    top: 2804px;
+    width: 90px;
+}
+
+.cancer .group-33-GsKcgK {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-30-D4kbxE {
+    background-color: transparent;
+    height: calc(100.00% - 5px);
+    left: 3px;
+    position: absolute;
+    top: 2px;
+    width: calc(100.00% - 6px);
+}
+
+.cancer .group-29-vsiZzY {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-75-x6exsE {
+    background-color: transparent;
+    height: 51px;
+    left: -7px;
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    width: 34px;
+}
+
+.cancer .path-76-x6exsE {
+    background-color: transparent;
+    height: calc(100.00% + 4px);
+    left: 14px;
+    object-fit: cover;
+    position: absolute;
+    top: -1px;
+    width: calc(100.00% - 26px);
+}
+
+.cancer .group-22-x6exsE {
+    background-color: transparent;
+    bottom: 5px;
+    height: 12px;
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: calc(27.10% - 5px);
+    width: 19px;
+}
+
+.cancer .group-21-ewLy4Z {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-20-MkroDr {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-25-x6exsE {
+    background-color: transparent;
+    height: 23px;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+    position: absolute;
+    right: calc(49.38% - 21px);
+    top: calc(43.59% - 10px);
+    width: 42px;
+}
+
+.cancer .group-24-UhDnFH {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-23-c0bxNr {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .path-79-x6exsE {
+    background-color: transparent;
+    height: 19px;
+    left: calc(28.80% - 6px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(38.91% - 7px);
+    width: 22px;
+}
+
+.cancer .path-80-x6exsE {
+    background-color: transparent;
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(27.11% - 6px);
+    top: calc(39.54% - 7px);
+    width: 22px;
+}
+
+.cancer .path-81-x6exsE {
+    background-color: transparent;
+    height: 5px;
+    left: calc(31.65% - 1px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(40.80% - 2px);
+    width: 4px;
+}
+
+.cancer .path-82-x6exsE {
+    background-color: transparent;
+    height: 2px;
+    left: calc(32.26% - 1px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(41.13% - 1px);
+    width: 2px;
+}
+
+.cancer .path-83-x6exsE {
+    background-color: transparent;
+    bottom: calc(17.33% - 1px);
+    height: 4px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(49.00% - 1px);
+    width: 3px;
+}
+
+.cancer .path-84-x6exsE {
+    background-color: transparent;
+    bottom: calc(33.98% - 8px);
+    height: 23px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(49.50% - 1px);
+    width: 1px;
+}
+
+.cancer .path-85-x6exsE {
+    background-color: transparent;
+    height: 6px;
+    left: calc(33.52% - 6px);
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    width: 17px;
+}
+
+.cancer .path-86-x6exsE {
+    background-color: transparent;
+    height: 6px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(33.34% - 6px);
+    top: 4px;
+    width: 17px;
+}
+
+.cancer .path-87-x6exsE {
+    background-color: transparent;
+    height: 49px;
+    object-fit: cover;
+    position: absolute;
+    right: -7px;
+    top: 4px;
+    width: 32px;
+}
+
+.cancer .path-88-x6exsE {
+    background-color: transparent;
+    bottom: 6px;
+    height: 11px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(29.47% - 5px);
+    width: 16px;
+}
+
+.cancer .path-89-x6exsE {
+    background-color: transparent;
+    bottom: 7px;
+    height: 35px;
+    object-fit: cover;
+    position: absolute;
+    right: -7px;
+    width: 28px;
+}
+
+.cancer .path-90-x6exsE {
+    background-color: transparent;
+    bottom: -2px;
+    height: 10px;
+    left: calc(31.01% - 3px);
+    object-fit: cover;
+    position: absolute;
+    width: 10px;
+}
+
+.cancer .path-91-x6exsE {
+    background-color: transparent;
+    bottom: -2px;
+    height: 10px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(29.89% - 3px);
+    width: 10px;
+}
+
+.cancer .group-28-x6exsE {
+    background-color: transparent;
+    bottom: -3px;
+    height: 13px;
+    left: calc(23.40% - 4px);
+    mix-blend-mode: multiply;
+    position: absolute;
+    width: 15px;
+}
+
+.cancer .group-27-MsXrFx {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-26-8NZrn9 {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-93-x6exsE {
+    background-color: transparent;
+    bottom: -2px;
+    height: 12px;
+    left: calc(22.76% - 3px);
+    object-fit: cover;
+    position: absolute;
+    width: 15px;
+}
+
+.cancer .path-94-x6exsE {
+    background-color: transparent;
+    bottom: 1px;
+    height: 39px;
+    left: -7px;
+    object-fit: cover;
+    position: absolute;
+    width: 24px;
+}
+
+.cancer .path-95-x6exsE {
+    background-color: transparent;
+    height: 8px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(29.72% - 2px);
+    top: calc(40.35% - 3px);
+    width: 8px;
+}
+
+.cancer .path-96-x6exsE {
+    background-color: transparent;
+    height: 5px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(30.72% - 1px);
+    top: calc(40.80% - 2px);
+    width: 4px;
+}
+
+.cancer .path-97-x6exsE {
+    background-color: transparent;
+    height: 2px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(31.36% - 1px);
+    top: calc(41.13% - 1px);
+    width: 2px;
+}
+
+.cancer .group-32-D4kbxE {
+    background-color: transparent;
+    height: 100%;
+    left: -4px;
+    position: absolute;
+    top: 0px;
+    width: calc(100.00% + 8px);
+}
+
+.cancer .group-31-R27qDa {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-39-YRVxtg {
+    background-color: transparent;
+    height: 89px;
+    left: 335px;
+    position: absolute;
+    top: 2995px;
+    width: 90px;
+}
+
+.cancer .group-36-Y0HNKD {
+    background-color: transparent;
+    height: calc(100.00% - 5px);
+    left: 3px;
+    position: absolute;
+    top: 2px;
+    width: calc(100.00% - 6px);
+}
+
+.cancer .group-35-BMCsjx {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-38-Y0HNKD {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-37-d482QH {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-48-YRVxtg {
+    background-color: transparent;
+    height: 89px;
+    left: 875px;
+    position: absolute;
+    top: 2636px;
+    width: 89px;
+}
+
+.cancer .group-47-Bm7U9x {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-44-bELqYh {
+    background-color: transparent;
+    height: calc(100.00% - 4px);
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: calc(100.00% - 4px);
+}
+
+.cancer .group-43-JCF8Ov {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-111-ETxJ11 {
+    background-color: transparent;
+    height: 38px;
+    left: 7px;
+    object-fit: cover;
+    position: absolute;
+    top: -3px;
+    width: 39px;
+}
+
+.cancer .path-112-ETxJ11 {
+    background-color: transparent;
+    height: 15px;
+    object-fit: cover;
+    position: absolute;
+    right: 8px;
+    top: -8px;
+    width: 28px;
+}
+
+.cancer .path-113-ETxJ11 {
+    background-color: transparent;
+    height: calc(100.00% + 16px);
+    left: 18px;
+    object-fit: cover;
+    position: absolute;
+    top: -3px;
+    width: calc(100.00% - 1px);
+}
+
+.cancer .group-42-ETxJ11 {
+    background-color: transparent;
+    bottom: 12px;
+    height: 35px;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+    position: absolute;
+    right: -9px;
+    width: 62px;
+}
+
+.cancer .group-41-HOF8sj {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-40-xGMb1M {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-115-ETxJ11 {
+    background-color: transparent;
+    bottom: calc(36.06% - 10px);
+    height: 28px;
+    left: calc(49.68% - 16px);
+    object-fit: cover;
+    position: absolute;
+    width: 33px;
+}
+
+.cancer .path-116-ETxJ11 {
+    background-color: transparent;
+    bottom: calc(36.46% - 10px);
+    height: 28px;
+    object-fit: cover;
+    position: absolute;
+    right: -15px;
+    width: 33px;
+}
+
+.cancer .path-117-ETxJ11 {
+    background-color: transparent;
+    bottom: calc(39.88% - 3px);
+    height: 7px;
+    left: calc(46.99% - 3px);
+    object-fit: cover;
+    position: absolute;
+    width: 7px;
+}
+
+.cancer .path-118-ETxJ11 {
+    background-color: transparent;
+    bottom: calc(40.42% - 1px);
+    height: 3px;
+    left: calc(47.14% - 1px);
+    object-fit: cover;
+    position: absolute;
+    width: 3px;
+}
+
+.cancer .path-119-ETxJ11 {
+    background-color: transparent;
+    bottom: calc(39.88% - 3px);
+    height: 7px;
+    object-fit: cover;
+    position: absolute;
+    right: -4px;
+    width: 7px;
+}
+
+.cancer .path-120-ETxJ11 {
+    background-color: transparent;
+    bottom: calc(40.42% - 1px);
+    height: 3px;
+    object-fit: cover;
+    position: absolute;
+    right: -2px;
+    width: 3px;
+}
+
+.cancer .path-121-ETxJ11 {
+    background-color: transparent;
+    bottom: -8px;
+    height: 35px;
+    object-fit: cover;
+    position: absolute;
+    right: 25.75%;
+    width: 1px;
+}
+
+.cancer .path-122-ETxJ11 {
+    background-color: transparent;
+    height: 9px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(44.79% - 12px);
+    top: 4px;
+    width: 26px;
+}
+
+.cancer .path-123-ETxJ11 {
+    background-color: transparent;
+    height: 9px;
+    object-fit: cover;
+    position: absolute;
+    right: -7px;
+    top: 4px;
+    width: 26px;
+}
+
+.cancer .path-124-ETxJ11 {
+    background-color: transparent;
+    height: 47px;
+    object-fit: cover;
+    position: absolute;
+    right: -22px;
+    top: 8px;
+    width: 22px;
+}
+
+.cancer .group-46-bELqYh {
+    background-color: transparent;
+    height: calc(100.00% + 17px);
+    left: 0px;
+    position: absolute;
+    top: -6px;
+    width: calc(100.00% + 20px);
+}
+
+.cancer .group-45-5YFEKz {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-53-YRVxtg {
+    background-color: transparent;
+    height: 89px;
+    left: 959px;
+    position: absolute;
+    top: 2804px;
+    width: 90px;
+}
+
+.cancer .group-50-LWrGeI {
+    background-color: transparent;
+    height: calc(100.00% - 5px);
+    left: 3px;
+    position: absolute;
+    top: 2px;
+    width: calc(100.00% - 6px);
+}
+
+.cancer .group-49-kf62xV {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-52-LWrGeI {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-51-ExQBM0 {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-68-YRVxtg {
+    background-color: transparent;
+    height: 89px;
+    left: 925px;
+    position: absolute;
+    top: 2987px;
+    width: 98px;
+}
+
+.cancer .group-67-vEFvkT {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-64-IFsIrZ {
+    background-color: transparent;
+    height: calc(100.00% - 5px);
+    left: 7px;
+    position: absolute;
+    top: 2px;
+    width: calc(100.00% - 14px);
+}
+
+.cancer .group-63-0RSxmL {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-140-5iq6xm {
+    background-color: transparent;
+    height: 51px;
+    left: -7px;
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    width: 34px;
+}
+
+.cancer .path-141-5iq6xm {
+    background-color: transparent;
+    height: calc(100.00% + 4px);
+    left: 14px;
+    object-fit: cover;
+    position: absolute;
+    top: -1px;
+    width: calc(100.00% - 26px);
+}
+
+.cancer .group-56-5iq6xm {
+    background-color: transparent;
+    bottom: 5px;
+    height: 12px;
+    mix-blend-mode: multiply;
+    position: absolute;
+    right: calc(27.10% - 5px);
+    width: 19px;
+}
+
+.cancer .group-55-W8E95N {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-54-SddGXF {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .group-59-5iq6xm {
+    background-color: transparent;
+    height: 23px;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+    position: absolute;
+    right: calc(49.38% - 21px);
+    top: calc(43.59% - 10px);
+    width: 42px;
+}
+
+.cancer .group-58-SVuddv {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-57-VBHpO9 {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+}
+
+.cancer .path-144-5iq6xm {
+    background-color: transparent;
+    height: 19px;
+    left: calc(28.80% - 6px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(38.91% - 7px);
+    width: 22px;
+}
+
+.cancer .path-145-5iq6xm {
+    background-color: transparent;
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(27.11% - 6px);
+    top: calc(39.54% - 7px);
+    width: 22px;
+}
+
+.cancer .path-146-5iq6xm {
+    background-color: transparent;
+    height: 5px;
+    left: calc(31.65% - 1px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(40.80% - 2px);
+    width: 4px;
+}
+
+.cancer .path-147-5iq6xm {
+    background-color: transparent;
+    height: 2px;
+    left: calc(32.26% - 1px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(41.13% - 1px);
+    width: 2px;
+}
+
+.cancer .path-148-5iq6xm {
+    background-color: transparent;
+    bottom: calc(17.33% - 1px);
+    height: 4px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(49.00% - 1px);
+    width: 3px;
+}
+
+.cancer .path-149-5iq6xm {
+    background-color: transparent;
+    bottom: calc(33.98% - 8px);
+    height: 23px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(49.50% - 1px);
+    width: 1px;
+}
+
+.cancer .path-150-5iq6xm {
+    background-color: transparent;
+    height: 6px;
+    left: calc(33.52% - 6px);
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    width: 17px;
+}
+
+.cancer .path-151-5iq6xm {
+    background-color: transparent;
+    height: 6px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(33.34% - 6px);
+    top: 4px;
+    width: 17px;
+}
+
+.cancer .path-152-5iq6xm {
+    background-color: transparent;
+    height: 49px;
+    object-fit: cover;
+    position: absolute;
+    right: -7px;
+    top: 4px;
+    width: 32px;
+}
+
+.cancer .path-153-5iq6xm {
+    background-color: transparent;
+    bottom: 6px;
+    height: 11px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(29.47% - 5px);
+    width: 16px;
+}
+
+.cancer .path-154-5iq6xm {
+    background-color: transparent;
+    bottom: 7px;
+    height: 35px;
+    object-fit: cover;
+    position: absolute;
+    right: -7px;
+    width: 28px;
+}
+
+.cancer .path-155-5iq6xm {
+    background-color: transparent;
+    bottom: -2px;
+    height: 10px;
+    left: calc(31.01% - 3px);
+    object-fit: cover;
+    position: absolute;
+    width: 10px;
+}
+
+.cancer .path-156-5iq6xm {
+    background-color: transparent;
+    bottom: -2px;
+    height: 10px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(29.89% - 3px);
+    width: 10px;
+}
+
+.cancer .group-62-5iq6xm {
+    background-color: transparent;
+    bottom: -3px;
+    height: 13px;
+    left: calc(23.40% - 4px);
+    mix-blend-mode: multiply;
+    position: absolute;
+    width: 15px;
+}
+
+.cancer .group-61-nNJrCw {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-60-dZG0Fu {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-158-5iq6xm {
+    background-color: transparent;
+    bottom: -2px;
+    height: 12px;
+    left: calc(22.76% - 3px);
+    object-fit: cover;
+    position: absolute;
+    width: 15px;
+}
+
+.cancer .path-159-5iq6xm {
+    background-color: transparent;
+    bottom: 1px;
+    height: 39px;
+    left: -7px;
+    object-fit: cover;
+    position: absolute;
+    width: 24px;
+}
+
+.cancer .path-160-5iq6xm {
+    background-color: transparent;
+    height: 8px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(29.72% - 2px);
+    top: calc(40.35% - 3px);
+    width: 8px;
+}
+
+.cancer .path-161-5iq6xm {
+    background-color: transparent;
+    height: 5px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(30.72% - 1px);
+    top: calc(40.80% - 2px);
+    width: 4px;
+}
+
+.cancer .path-162-5iq6xm {
+    background-color: transparent;
+    height: 2px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(31.36% - 1px);
+    top: calc(41.13% - 1px);
+    width: 2px;
+}
+
+.cancer .group-66-IFsIrZ {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-65-4jAVGi {
+    background-color: transparent;
+    height: 100%;
+    left: 1px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-76-YRVxtg {
+    background-color: transparent;
+    height: 520px;
+    left: 198px;
+    position: absolute;
+    top: 3498px;
+    width: 470px;
+}
+
+.cancer .mask-group-3-QvRJWt {
+    background-color: transparent;
+    height: 100%;
+    left: 0px;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .group-69-QvRJWt {
+    background-color: transparent;
+    height: 60px;
+    left: calc(50.00% - 30px);
+    position: absolute;
+    top: calc(50.00% - 30px);
+    width: 60px;
+}
+
+.cancer .ellipse-1-8sCwaJ {
+    background-color: #ffffff33;
+    border: 1px solid var(--green-blue);
+    border-radius: 30px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-165-8sCwaJ {
+    background-color: transparent;
+    height: 16px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(44.01% - 5px);
+    top: calc(50.00% - 8px);
+    width: 12px;
+}
+
+.cancer .group-70-YRVxtg {
+    background-color: transparent;
+    height: 23px;
+    left: 675px;
+    position: absolute;
+    top: 705px;
+    width: 16px;
+}
+
+.cancer .path-169-Ssnvxn {
+    background-color: transparent;
+    height: calc(100.00% + 2px);
+    left: calc(50.00% - 1px);
+    object-fit: cover;
+    position: absolute;
+    top: -1px;
+    width: 2px;
+}
+
+.cancer .path-170-Ssnvxn {
+    background-color: transparent;
+    bottom: -1px;
+    height: 10px;
+    left: -1px;
+    object-fit: cover;
+    position: absolute;
+    width: calc(100.00% + 3px);
+}
+
+.cancer .logo-5B2xJn {
+    background-color: transparent;
+    height: 99px;
+    left: 98px;
+    object-fit: cover;
+    position: absolute;
+    top: 20px;
+    width: 91px;
+}
+
+.cancer .group-72-YRVxtg {
+    background-color: transparent;
+    height: 44px;
+    left: 512px;
+    position: absolute;
+    top: 20px;
+    width: 784px;
+}
+
+.cancer .patient-care-0mRkcp {
+    background-color: transparent;
+    height: 23px;
+    left: 0px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: calc(50.00% - 12px);
+    white-space: nowrap;
+    width: 87px;
+}
+
+.cancer .know-about-cancer-0mRkcp {
+    background-color: transparent;
+    height: 23px;
+    left: calc(19.25% - 27px);
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: calc(50.00% - 12px);
+    white-space: nowrap;
+    width: 140px;
+}
+
+.cancer .departments-0mRkcp {
+    background-color: transparent;
+    height: 23px;
+    left: calc(43.33% - 41px);
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: calc(50.00% - 12px);
+    white-space: nowrap;
+    width: 94px;
+}
+
+.cancer .about-us-0mRkcp {
+    background-color: transparent;
+    height: 23px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    right: calc(40.08% - 27px);
+    text-align: left;
+    top: calc(50.00% - 12px);
+    white-space: nowrap;
+    width: 68px;
+}
+
+.cancer .online-survey-0mRkcp {
+    background-color: transparent;
+    height: 23px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    right: calc(22.08% - 22px);
+    text-align: left;
+    top: calc(50.00% - 12px);
+    white-space: nowrap;
+    width: 100px;
+}
+
+.cancer .group-71-0mRkcp {
+    background-color: transparent;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 116px;
+}
+
+.cancer .rectangle-41-RnOa9u {
+    background-color: var(--green-blue);
+    border-radius: 22px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .register-RnOa9u {
+    background-color: transparent;
+    height: 23px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    right: calc(48.28% - 28px);
+    text-align: center;
+    top: calc(50.00% - 12px);
+    white-space: nowrap;
+    width: 58px;
+}
+
+.cancer .group-73-YRVxtg {
+    background-color: transparent;
+    height: 59px;
+    left: 1238px;
+    position: absolute;
+    top: 2853px;
+    width: 60px;
+}
+
+.cancer .ellipse-2-4Oxkee {
+    background-color: var(--white);
+    border-radius: 30px/29.5px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-171-4Oxkee {
+    background-color: transparent;
+    height: 19px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(49.41% - 5px);
+    top: calc(50.00% - 9px);
+    width: 10px;
+}
+
+.cancer .group-74-YRVxtg {
+    background-color: transparent;
+    height: 59px;
+    left: 68px;
+    position: absolute;
+    top: 2853px;
+    width: 60px;
+}
+
+.cancer .ellipse-2-BGxDE0 {
+    background-color: var(--white);
+    border-radius: 30px/29.5px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-171-BGxDE0 {
+    background-color: transparent;
+    height: 19px;
+    left: calc(49.41% - 5px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 9px);
+    width: 10px;
+}
+
+.cancer .group-75-YRVxtg {
+    background-color: transparent;
+    height: 60px;
+    left: 581px;
+    position: absolute;
+    top: 3248px;
+    width: 205px;
+}
+
+.cancer .rectangle-41-1PxMxL {
+    background-color: var(--green-blue);
+    border-radius: 30px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .get-help-1PxMxL {
+    background-color: transparent;
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+    height: 26px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    right: calc(48.89% - 34px);
+    text-align: center;
+    top: calc(50.00% - 13px);
+    white-space: nowrap;
+    width: 70px;
+}
+
+.cancer .instagram-YRVxtg {
+    background-color: transparent;
+    height: 40px;
+    left: 1178px;
+    position: absolute;
+    top: 5566px;
+    width: 40px;
+}
+
+.cancer .oval-Cdi6oy {
+    background-color: var(--white);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .instagram-Cdi6oy {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(50.00% - 9px);
+    width: 18px;
+}
+
+.cancer .youtube-YRVxtg {
+    background-color: transparent;
+    height: 40px;
+    left: 1118px;
+    position: absolute;
+    top: 5566px;
+    width: 40px;
+}
+
+.cancer .oval-T83pDS {
+    background-color: var(--white);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .youtube-T83pDS {
+    background-color: transparent;
+    height: 18px;
+    left: 8px;
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 9px);
+    width: calc(100.00% - 17px);
+}
+
+.cancer .twitter-YRVxtg {
+    background-color: transparent;
+    height: 40px;
+    left: 1058px;
+    position: absolute;
+    top: 5566px;
+    width: 40px;
+}
+
+.cancer .oval-cm4LO1 {
+    background-color: var(--white);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .twitter-cm4LO1 {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    left: 9px;
+    object-fit: cover;
+    position: absolute;
+    width: calc(100.00% - 18px);
+}
+
+.cancer .facebook-YRVxtg {
+    background-color: transparent;
+    height: 40px;
+    left: 998px;
+    position: absolute;
+    top: 5566px;
+    width: 40px;
+}
+
+.cancer .oval-CVppBM {
+    background-color: var(--white);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .facebook-CVppBM {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(48.39% - 4px);
+    width: 9px;
+}
+
+.cancer .patient-care-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5382px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .know-about-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5382px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .departments-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 998px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5382px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .stay-connected-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 998px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5526px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .clinics-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5422px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .what-is-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5422px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .department-1-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 998px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5422px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .causes-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5448px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .department-2-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 998px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5448px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .signs-and-symptoms-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5476px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .types-of-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5502px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .diagnosis-and-treatment-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5530px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .prevention-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5556px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .outpatient-services-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5448px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .inpatient-services-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5476px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .diagnostic-services-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5502px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .therapeutic-services-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5530px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .community-oncology-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5556px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .outreach-services-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5584px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .telemedicines-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5610px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .copyright-2022-xxxxxxxxx-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 588px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 5724px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .pngfindcom-flag-of-india-png-408105-YRVxtg {
+    background-color: transparent;
+    height: 242px;
+    left: 98px;
+    object-fit: cover;
+    position: absolute;
+    top: 5382px;
+    width: 222px;
+}
+
+.cancer .did-you-know-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 348px;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    position: absolute;
+    text-align: center;
+    top: 5003px;
+    white-space: nowrap;
+    width: 672px;
+}
+
+.cancer .know-more-about-cancer-YRVxtg {
+    background-color: transparent;
+    color: var(--green-blue);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    left: 1074px;
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    position: absolute;
+    text-align: left;
+    text-decoration: underline;
+    top: 5028px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.cancer .group-423-YRVxtg {
+    background-color: transparent;
+    height: 123px;
+    left: 98px;
+    position: absolute;
+    top: 5109px;
+    width: 370px;
+}
+
+.cancer .rectangle-14-L1yXgi {
+    background-color: var(--gallery);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .in-india-more-than-1-L1yXgi {
+    background-color: transparent;
+    height: 55px;
+    left: 40px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: calc(39.71% - 22px);
+    width: calc(100.00% - 68px);
+}
+
+.cancer .group-424-YRVxtg {
+    background-color: transparent;
+    height: 123px;
+    left: 498px;
+    position: absolute;
+    top: 5109px;
+    width: 370px;
+}
+
+.cancer .rectangle-39-bIGzPA {
+    background-color: var(--gallery);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .the-most-common-male-bIGzPA {
+    background-color: transparent;
+    height: 55px;
+    left: 40px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: calc(39.71% - 22px);
+    width: calc(100.00% - 68px);
+}
+
+.cancer .group-425-YRVxtg {
+    background-color: transparent;
+    height: 123px;
+    left: 898px;
+    position: absolute;
+    top: 5109px;
+    width: 370px;
+}
+
+.cancer .rectangle-40-8UzkvL {
+    background-color: var(--gallery);
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .the-most-common-fema-8UzkvL {
+    background-color: transparent;
+    height: 55px;
+    left: 40px;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    top: calc(39.71% - 22px);
+    width: calc(100.00% - 68px);
+}
+
+.cancer .group-426-YRVxtg {
+    background-color: transparent;
+    height: 59px;
+    left: 1238px;
+    position: absolute;
+    top: 5141px;
+    width: 60px;
+}
+
+.cancer .ellipse-2-jKp0x7 {
+    background-color: var(--white);
+    border-radius: 30px/29.5px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-171-jKp0x7 {
+    background-color: transparent;
+    height: 19px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(49.41% - 5px);
+    top: calc(50.00% - 9px);
+    width: 10px;
+}
+
+.cancer .group-427-YRVxtg {
+    background-color: transparent;
+    height: 59px;
+    left: 68px;
+    position: absolute;
+    top: 5141px;
+    width: 60px;
+}
+
+.cancer .ellipse-2-Wr3XC6 {
+    background-color: var(--white);
+    border-radius: 30px/29.5px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cancer .path-171-Wr3XC6 {
+    background-color: transparent;
+    height: 19px;
+    left: calc(49.41% - 5px);
+    object-fit: cover;
+    position: absolute;
+    top: calc(50.00% - 9px);
+    width: 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,99 @@
+.rectangle-7-YRVxtg {
+    background: linear-gradient(216.02deg, #008e55 13.18%, #0366b4 89.66%);
+    background-color: transparent;
+    height: 100%;
+    position: relative;
+}
+
+@media screen and (max-width: 770px) {
+    .layoutHeight {
+        height: 1300px;
+    }
+
+    .recHeight {
+        height: 50%;
+    }
+}
+
+@media screen and (min-width: 770px) {
+    .layoutHeight {
+        height: 650px;
+    }
+
+    .recHeight {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .ysr-YRVxtg {
+        background-color: transparent;
+        height: 520px;
+        object-fit: cover;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        /* width: 300px; */
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .ysr-YRVxtg {
+        background-color: transparent;
+        height: 520px;
+        object-fit: cover;
+        position: absolute;
+        top: 10%;
+        left: 35%;
+        /* width: 450px; */
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width:1100px) {
+    .ysr-YRVxtg {
+        background-color: transparent;
+        height: 520px;
+        object-fit: cover;
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        /* width: 310px; */
+    }
+}
+
+.logo-YRVxtg {
+    background-color: transparent;
+    height: 68px;
+    object-fit: cover;
+    width: 76px;
+}
+
+.im-here-for-you-YRVxtg {
+    background-color: transparent;
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 700;
+    height: auto;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+}
+
+.ys-jagan-mohan-reddy-YRVxtg {
+    background-color: transparent;
+    color: var(--fiord);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-l);
+    font-weight: 400;
+    height: auto;
+    letter-spacing: 0.00px;
+    line-height: 26px;
+    position: absolute;
+    text-align: left;
+    white-space: nowrap;
+    width: auto;
+}

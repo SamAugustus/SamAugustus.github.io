@@ -1,0 +1,29 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.maintain-a-healthy-l-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    letter-spacing: 0.00px;
+    line-height: 48px;
+    text-align: center;
+    width: 672px;
+}
+
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+
+.cancerLabel {
+    font-size: 14px !important;
+}
+
+.remove-border-bottom ::ng-deep .mat-tab-header {
+    border-bottom: none;
+}
+
+.cancerHeader ::ng-deep  .mat-ink-bar {
+    background-color: #0366b4 !important;
+    height: 4px;
+    border-radius: 5px;
+}

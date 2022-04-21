@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Hind+Guntur:400,700,500");
+.footer-bg{
+    background: linear-gradient(249.08deg, #008e55 -38.2%, #0366b4 129.71%);
+    background-color: transparent;
+}
+
+
+.know-about-cancer-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 698px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5382px;
+    white-space: nowrap;
+    width: auto;
+}
+.patient-care-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5382px;
+    white-space: nowrap;
+    width: auto;
+}
+.instagram-Cdi6oy {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(50.00% - 9px);
+    width: 18px;
+}
+.clinics-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 398px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: left;
+    top: 5422px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.hindguntur-normal-white-14px {
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: 400;
+    margin: 0px 0px 5px 0px
+}
+
+.stay-connected-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 998px;
+    letter-spacing: 0.00px;
+    line-height: 22px;
+    position: absolute;
+    text-align: left;
+    top: 5526px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.hindguntur-bold-white-16px {
+    color: var(--white);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: 700;
+}
+
+.pngfindcom-flag-of-india-png-408105-YRVxtg {
+    background-color: transparent;
+    object-fit: cover;
+    width: 222px;
+}
+
+.copyright-2022-xxxxxxxxx-YRVxtg {
+    background-color: transparent;
+    height: auto;
+    left: 588px;
+    letter-spacing: 0.00px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    top: 5724px;
+    white-space: nowrap;
+    width: auto;
+}
+
+.instagram-Cdi6oy {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(50.00% - 9px);
+    width: 18px;
+}
+
+.instagram-YRVxtg {
+    background-color: transparent;
+    height: 40px;
+    left: 1178px;
+    position: absolute;
+    top: 5566px;
+    width: 40px;
+}
+
+.facebook-YRVxtg {
+    background-color: transparent;
+    height: 40px;
+    left: 998px;
+    position: absolute;
+    top: 5566px;
+    width: 40px;
+}
+.oval-CVppBM {
+    background-color: var(--white);
+    border-radius: 20px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+.facebook-CVppBM {
+    background-color: transparent;
+    bottom: calc(50.00% - 9px);
+    height: 18px;
+    object-fit: cover;
+    position: absolute;
+    right: calc(48.39% - 4px);
+    width: 9px;
+}
+
+.fa-icon-style {
+    background-color: #f8f9fa;
+    border-radius: 30px;
+    color: #017d7b;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: auto 3px;
+    width: 40px;
+    font-size: 20px !important;
+    text-align: center;
+}
+
+/* .fa-gradient {
+	background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+} */

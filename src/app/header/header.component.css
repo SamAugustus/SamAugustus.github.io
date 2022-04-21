@@ -1,0 +1,52 @@
+.headerLogo {
+  background-color: transparent;
+  height: 99px;
+  object-fit: cover;
+  position: absolute;
+  width: 91px;
+}
+
+.headerNavLink {
+  line-height: 22px;
+  font-size : 14px;
+  margin-right: 10px;
+}
+#myVideo {
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  color: #f1f1f1;
+  padding: 20px;
+  height:100px;
+  width:90%;
+}
+
+@media screen and (max-width: 770px) {
+  .layoutHeight {
+    height: 650px;
+  }
+
+  .content {
+    height:200px
+  }
+
+  .headerNavLink {
+    line-height: 22px;
+    font-size : 12px;
+    margin-right: 10px;
+  }
+
+}
+
+@media screen and (min-width: 770px) {
+  .layoutHeight {
+    height: 650px;
+  }
+
+}

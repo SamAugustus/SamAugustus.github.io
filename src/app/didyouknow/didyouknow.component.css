@@ -1,0 +1,150 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* .did-you-know-YRVxtg {
+    background-color: transparent;
+}
+
+.w-100 {
+    width: 100%!important;
+  }
+  
+  .container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+  }
+  
+  .cards {
+    width: calc(100% - 80px);
+    overflow: hidden;
+  }
+  
+  .overflow {
+    position: relative;
+    transition: left 0.5s ease-in-out;
+  }
+  
+  .card {
+    height: 300px;
+    background-color: #e0e1e2;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .no-right-margin {
+    margin-right: 0px;
+  }
+  
+  .card span {
+    font-size:48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .left,
+  .right {
+    height: 30px;
+    width: 30px;
+    background-color: #0072bc;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .left.disabled, .right.disabled {
+    background-color:#CCC;
+  }
+  
+  .left {
+    left: 0;
+  }
+  
+  .right {
+    right: 0;
+  } */
+
+
+.example-card {
+    width: 500px;
+}
+
+.lane {
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+i.arrow-left,
+i.arrow-right {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    height: auto;
+}
+
+i.arrow-left {
+    left: -10px;
+}
+
+i.arrow-right {
+    right: -15px;
+}
+
+.card-cont {
+    margin: 10px;
+}
+.cardContent{
+    margin: 50px;
+}
+.know-more-about-cancer-YRVxtg {
+    background-color: transparent;
+    color: var(--green-blue);
+    font-family: var(--font-family-hind_guntur);
+    font-size: var(--font-size-m);
+    font-style: normal;
+    font-weight: 400;
+    height: auto;
+    /* left: 1074px; */
+    letter-spacing: 0.00px;
+    line-height: 24px;
+    /* position: absolute; */
+    text-align: left;
+    text-decoration: underline;
+    top: 5028px;
+    white-space: nowrap;
+    width: auto;
+}
+.card {
+    width: 400px;
+    height: 130px;
+    background-color: var(--gallery);
+    border: 0px solid rgba(0, 0, 0, .125);
+    border-radius: 0;
+    align-content: center;
+    justify-content: center
+}
+
+.fa-icon-style {
+    background-color: white;
+    border-radius: 30px;
+    display: inline-block;
+    /* height: 40px;
+    line-height: 40px; */
+    /* margin: auto 3px; */
+    /* width: 40px; */
+    font-size: 20px !important;
+    text-align: center;
+    border: 0.5px solid #212529;
+    color: #02719a;
+    height: 50px;
+    line-height: 50px;
+    margin: auto 5px;
+    width: 50px;
+}
