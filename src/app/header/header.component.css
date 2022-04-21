@@ -29,7 +29,7 @@
 
 @media screen and (max-width: 770px) {
   .layoutHeight {
-    height: 650px;
+    height: auto;
   }
 
   .content {
